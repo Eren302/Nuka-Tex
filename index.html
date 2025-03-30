@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUKA-TEX</title>
+ 
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1f2b;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background: #0d1b2a;
+            color: white;
+            padding: 20px 0;
+            margin-left: -140px;  /* Moved header content further left */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-left: -100px; /* Moved nav links further left */
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin-left: -100px;  /* Moved NUKA TEX name further left */
+        }
+
+        header img {
+            margin-left: -120px;  /* Moved logo further left */
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #f39c12;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start; /* Align to the left */
+            gap: 20px;
+            padding: 20px 0; /* Reduced padding for left shift */
+            margin-left: 50px; /* Move products to the left */
+        }
+
+        .product {
+            background: #273c75;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            width: 250px;
+            color: white;
+            text-align: left;
+        }
+
+        .product img {
+            width: 100%;
+            height: 250px;  /* Fixed height for uniformity */
+            object-fit: cover;  /* Ensures the image covers the area without distortion */
+            border-radius: 5px;
+        }
+
+        .product p {
+            margin: 5px 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px;
+            background: #f39c12;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: #e67e22;
+        }
+
+        /* Video Styles */
+        .video-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+            margin-left: 50px;  /* Align videos more to the left */
+        }
+
+        video {
+            width: 300px;
+            height: 500px;
+            object-fit: contain;  /* Make sure the whole video is visible */
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Cart Sidebar */
+        #cartSidebar {
+            position: fixed;
+            top: 0;
+            right: 5px;
+            width: 200px;
+            height: 100%;
+            background-color: #273c75;
+            color: white;
+            padding: 20px;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+            display: block;  /* Make the cart always visible */
+            overflow-y: auto;
+        }
+
+        #cartSidebar h3 {
+            text-align: center;
+            color: #f39c12;
+        }
+
+        .cart-item {
+            margin-bottom: 10px;
+        }
+
+        .cart-item p {
+            margin: 5px 0;
+        }
+
+        .total {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Nuka's LOGO.PNG" alt="">
+        <h1>NUKA TEX</h1>
+        <nav>
+            <ul>
+                <li><a href="tepiha.html">Tepiha</a></li>
+                <li><a href="perde.html">Perde</a></li>
+                <li><a href="postava.html">Postava</a></li>
+                <li><a href="ora.html">Ora</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <video controls>
+            <source src="SaveClip.App_AQNhbn7G4gDLPHaYwfa81Y7EinoMuNmWivVdj3AwcnIiOPKe9tx1WtQwoxEUKv3pVfVL5830jauZifSysoTh7vrtqxJzPi6jgdAOYL8.mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="SaveClip.App_AQNntkVNWP9myFxT7k4RVZV9zfIcZOYTb91Qrcz2xrxKYfVXlqObJt03VMOxM5rjyrbCccwS3VuAYz_ofRYXAcK_ZujKBTziscVXubA.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="SaveClip.App_AQP-xm6D_qBzGjMoEPCbBAzBML1MAXj5viwdBNr1_C70UlaVQm-vEZlUTTUOL0sRE_wD1BHctwq9mo1Eb8JLbjkaevOWLGtNZE9u_Ts.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Tepiha Section -->
+    <section id="tepiha">
+        <h2>Tepiha</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="Pierre Cardin Carpet.jpg" alt="Tepih Klasik">
+                <h3>Tepih Pierre Cardin</h3>
+                <p>Çmimi: €280</p>
+                <a href="#" class="button" onclick="addToCart('Tepih Pierre Cardin', 280)">Shto në shportë</a>
+            </div>
+            <div class="product">
+                <img src="Tepihu Klasik.jpg" alt="Tepih Klasik">
+                <h3>Tepih Klasik</h3>
+                <p>Çmimi: €120</p>
+                <a href="#" class="button" onclick="addToCart('Tepih Klasik', 120)">Shto në shportë</a>
+            </div>
+            <div class="product">
+                <img src="Tepihu Modern.jpg" alt="Tepih Modern">
+                <h3>Tepih Modern</h3>
+                <p>Çmimi: €195</p>
+                <a href="#" class="button" onclick="addToCart('Tepih Modern', 195)">Shto në shportë</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perde Section -->
+    <section id="perde">
+        <h2>Perde</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="Lan Curtain.jpg" alt="Perde Elegante">
+                <h3>Perde Lan</h3>
+                <p>Çmimi: €30</p>
+                <a href="#" class="button" onclick="addToCart('Perde Lan', 30)">Shto në shportë</a>
+            </div>
+            <div class="product">
+                <img src="Perde Elegante.jpg" alt="Perde Elegante">
+                <h3>Perde Elegante</h3>
+                <p>Çmimi: €30</p>
+                <a href="#" class="button" onclick="addToCart('Perde Elegante', 30)">Shto në shportë</a>
+            </div>
+            <div class="product">
+                <img src="Minimalist Curtains.jpg" alt="Perde Minimaliste">
+                <h3>Perde Minimaliste</h3>
+                <p>Çmimi: €40</p>
+                <a href="#" class="button" onclick="addToCart('Perde Minimaliste', 40)">Shto në shportë</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Postava Section -->
+    <section id="postava">
+        <h2>Postava</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="Linnen Bedsheets.jpg" alt="Postava Linnen">
+                <h3>Postava Linnen</h3>
+                <p>Çmimi: €25</p>
+                <a href="#" class="button" onclick="addToCart('Postava Linnen', 25)">Shto në shportë</a>
+            </div>
+            <div class="product">
+                <img src="Postava COTTON.jpg" alt="Postava Pambuku">
+                <h3>Postava Pambuku</h3>
+                <p>Çmimi: €25</p>
+                <a href="#" class="button" onclick="addToCart('Postava Pambuku', 25)">Shto në shportë</a>
+            </div>
+            <div class="product">
+                <img src="Postava Saten.jpg" alt="Postava Saten">
+                <h3>Postava Saten</h3>
+                <p>Çmimi: €35</p>
+                <a href="#" class="button" onclick="addToCart('Postava Saten', 35)">Shto në shportë</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ora Section -->
+    <section id="ora">
+        <h2>Ora</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="Ore klassike.jpg" alt="Orendi Dhome">
+                <h3>Ore Klassike</h3>
+                <p>Çmimi: €100</p>
+                <a href="#" class="button" onclick="addToCart('Ore Klassike', 100)">Shto në shportë</a>
+            </div>
+            <div class="product">
+                <img src="kiongshit.jpg" alt="Orendi Dhome">
+                <h3>Ore Dhome</h3>
+                <p>Çmimi: €100</p>
+                <a href="#" class="button" onclick="addToCart('Ore Dhome', 100)">Shto në shportë</a>
+            </div>
+            <div class="product">
+                <img src="OreModerne.jpg" alt="Orendi Moderne">
+                <h3>Ore Moderne</h3>
+                <p>Çmimi: €120</p>
+                <a href="#" class="button" onclick="addToCart('Ore Moderne', 120)">Shto në shportë</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar">
+        <h3>Shporta</h3>
+        <div id="cartItems"></div>
+        <div class="total">
+            <p>Totali: €<span id="totalPrice">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            total += price;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cartItems');
+            const totalPriceSpan = document.getElementById('totalPrice');
+            cartItemsDiv.innerHTML = '';
+
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `<p>${item.product} - €${item.price}</p>`;
+                cartItemsDiv.appendChild(itemDiv);
+            });
+
+            totalPriceSpan.textContent = total.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
